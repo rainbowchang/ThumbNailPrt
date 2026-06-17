@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThumbNailPrt01", "ThumbNailPrt01\ThumbNailPrt01.csproj", "{5FB2E393-BAAB-423F-BA4D-278A9AB7DC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThumbnailPrt02", "ThumbnailPrt02\ThumbnailPrt02.csproj", "{B221CB05-4313-456A-8C2F-0C082E8A38BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FB2E393-BAAB-423F-BA4D-278A9AB7DC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB2E393-BAAB-423F-BA4D-278A9AB7DC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB2E393-BAAB-423F-BA4D-278A9AB7DC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB2E393-BAAB-423F-BA4D-278A9AB7DC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B221CB05-4313-456A-8C2F-0C082E8A38BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B221CB05-4313-456A-8C2F-0C082E8A38BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B221CB05-4313-456A-8C2F-0C082E8A38BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B221CB05-4313-456A-8C2F-0C082E8A38BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40A6256B-1420-4DF9-8CE2-A5F63C864EAD}
+	EndGlobalSection
+EndGlobal
