@@ -81,14 +81,17 @@ namespace ThumbNailPrt01
         {
             Part workPart = theSession.Parts.Work;
             Part displayPart = theSession.Parts.Display;
+            bool needToClose = false;  // 标记是否需要关闭这个部件
 
             workPart = FindOpenedPart(partPath);
 
             if (workPart == null)
             {
+                // 文件未打开，需要新打开，完成后需要关闭
                 PartLoadStatus partLoadStatus;
                 BasePart basePart = theSession.Parts.OpenBaseDisplay(partPath, out partLoadStatus);
                 workPart = (Part)basePart;
+                needToClose = true;
             }
 
             theSession.Parts.SetWork(workPart);
@@ -99,10 +102,10 @@ namespace ThumbNailPrt01
                 theSession.Parts.SetDisplay(workPart, false, true, out displayLoadStatus);
             }
 
-            ExportImage(thumbnailPath);
+            ExportImage(workPart, thumbnailPath, needToClose);
         }
 
-        public static void ExportImage(string imageFileFullPath)
+        public static void ExportImage(Part workPart, string imageFileFullPath, bool needToClose)
         {
             NXOpen.Gateway.ImageExportBuilder imageExportBuilder = theUI.CreateImageExportBuilder();
             imageExportBuilder.RegionMode = false;
@@ -113,6 +116,13 @@ namespace ThumbNailPrt01
 
             imageExportBuilder.Commit();
             imageExportBuilder.Destroy();
+
+            // 如果是新打开的部件，生成缩略图后关闭它
+            if (needToClose && workPart != null)
+            {
+                int closeWholeTree = 0;
+                workPart.Close((BasePart.CloseWholeTree)closeWholeTree, BasePart.CloseModified.CloseModified, null);
+            }
         }
 
         public static Part FindOpenedPart(string partPath)
